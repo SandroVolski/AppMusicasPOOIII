@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="musical-note-outline"></ion-icon> PLAYLIST DE MÚSICAS <ion-icon name="musical-note-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="max-height-list"> <!-- Adicione esta div aqui -->
+    <ion-list *ngFor="let musica of lista_musicas">
+      <ion-item (click)="editar(musica)" class="item-musica">
+        <ion-icon slot="start" name="musical-note-outline"></ion-icon>
+        <div>
+          <h2>{{musica.nome}}</h2>
+          <p>{{musica.banda}}</p>
+        </div>  
+      </ion-item>
+    </ion-list>
+  </div> <!-- Feche a div aqui -->
+
+  <ion-fab horizontal="center" vertical="bottom">
+    <ion-fab-button (click)="irParaCadastrar()">
+      ADICIONAR <!--<ion-icon name="add-outline"></ion-icon>-->
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
